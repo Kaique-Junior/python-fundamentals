@@ -76,7 +76,7 @@ ninja.speed(ninja_velocidade)
 for i in range(5):
     desenhar_poligono(ninja, n_lados, tamanho_passo)
     if move_confirm == "Y" or move_confirm == "y":
-        mover_ninja(ninja, (x1 + 100), (y1 + 100))
+        mover_ninja(ninja, x1, y1)
         desenhar_poligono(ninja, n_lados, tamanho_passo)
 
 tela.exitonclick()
