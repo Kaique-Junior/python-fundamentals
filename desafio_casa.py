@@ -1,53 +1,62 @@
 import turtle
 
-## Configuração básica
+## Configuração Tela
 tela = turtle.Screen()
 tela.setup(width=800, height=800, startx=1000, starty=0)
 tela.title("Casa")
-tela.bgcolor("black")
+tela.bgcolor("darkblue")
 
-ninja = turtle.Turtle()
-ninja.shape("turtle")
-ninja.speed(5)
-ninja.color("yellow")
+## Configuração Turtle
+t = turtle.Turtle()
+t.shape("turtle")
+t.speed(0)
+t.color("green")
+t.pensize(8)
 
 # Funções
 
-def teleport(x, y):
-    ninja.teleport(x, y)
+# Importante para calcular onde preciso teleportar a turtle
+def position(t, prompt):
+    print(f"{prompt}:", t.pos())
 
-def position(prompt):
-    pos = ninja.pos()
-    print(f"{prompt}", pos)
+# Para encontrar o tamanho da hipotenusa para o telhado
+def hypotenuse(a, b):
+    return (a**2 + b**2) ** (1/2)
 
-def direita():
-    ninja.setheading(180)
+## FLUXO PARA FAZER UMA CASA
 
-def frente(x):
-    ninja.forward(x)
-
-# Algoritmo para construir uma casa com o turtle
-
-teleport(-200, -200)
+## Quadrado da Casa
+t.teleport(-200,-200)
 
 for i in range(4):
-    position("Posision quadrado:")
-    ninja.forward(400)
-    ninja.left(360 / 4)
-    
-ninja.teleport(200, 200)
+    position(t, "Posição do Quadrado")
+    t.forward(400)
+    t.left(360 / 4)
 
-ninja.teleport(0, 200)
-ninja.setheading(90)
-position("Posision 04:")
-frente(200)
-ninja.setheading(-45)
-frente(282.84)
+## Telhado
+t.teleport(-200, 200)
+t.setheading(45)
 
-direita()
-frente(400)
+for i in range(2):
+    position(t, "Posição triângulo")
+    t.forward(hypotenuse(200, 200))
+    t.setheading(0)
+    t.right(45)
 
+## Porta
+t.teleport(-100, -200)
 
+t.setheading(90)
+t.forward(200)
+t.setheading(0)
+t.forward(100)
+t.setheading(270)
+t.forward(200)
 
-# Tem que estar sempre no final
+# Porta - Maçaneta
+t.pensize(2)
+t.teleport(-30, -100)
+t.circle(10)
+
+## 
 tela.exitonclick()
