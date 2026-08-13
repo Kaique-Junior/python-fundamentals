@@ -9,9 +9,8 @@ tela.bgcolor("darkblue")
 ## Configuração Turtle
 t = turtle.Turtle()
 t.shape("turtle")
-t.speed(0)
-t.color("green")
-t.pensize(8)
+t.speed(5)
+t.pensize(5)
 
 # Funções
 
@@ -26,25 +25,26 @@ def hypotenuse(a, b):
 ## FLUXO PARA FAZER UMA CASA
 
 ## Quadrado da Casa
+t.begin_fill()
 t.teleport(-200,-200)
+t.color("navajo white")
 
 for i in range(4):
-    position(t, "Posição do Quadrado")
     t.forward(400)
     t.left(360 / 4)
 
 ## Telhado
 t.teleport(-200, 200)
 t.setheading(45)
+t.color("light coral")
 
 for i in range(2):
-    position(t, "Posição triângulo")
     t.forward(hypotenuse(200, 200))
-    t.setheading(0)
-    t.right(45)
+    t.right(90)
 
 ## Porta
 t.teleport(-100, -200)
+t.color("saddle brown")
 
 t.setheading(90)
 t.forward(200)
@@ -54,9 +54,14 @@ t.setheading(270)
 t.forward(200)
 
 # Porta - Maçaneta
-t.pensize(2)
 t.teleport(-30, -100)
-t.circle(10)
+t.color("black")
+t.pensize(2)
 
-## 
+t.circle(5)
+
+t.end_fill()
+t.hideturtle()
+
+#/
 tela.exitonclick()
