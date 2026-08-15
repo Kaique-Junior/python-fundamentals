@@ -38,6 +38,9 @@ while True:
 move_confirm = input("Deseja mover a tartaruga para criar vários poligonos? (Y / N)")
 if move_confirm == "Y" or move_confirm == "y":
     try:
+        print("------------------------------------")
+        print("Turtle sempre começa em x = 0, y = 0")
+        print("------------------------------------")
         x1 = int(input("Digite o valor do x:"))
         y1 = int(input("Digite o valor do y:"))
     except:
@@ -73,7 +76,7 @@ ninja.color("pink")
 ninja.speed(ninja_velocidade)
 
 # Movimentação
-for i in range(5):
+for i in range(2):
     desenhar_poligono(ninja, n_lados, tamanho_passo)
     if move_confirm == "Y" or move_confirm == "y":
         mover_ninja(ninja, x1, y1)
