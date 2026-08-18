@@ -4,8 +4,6 @@ import time
 # Foram 2 horas de quadra, porém uma pessoa jogou apenas em 1 horário e vai ajudar a pagar apenas naquele horário.
 # Pedir por horário jogado a quantidade de pessoas em tal horário.
 
-valor_hora = 0
-
 # 1. Criação de Def facilitadoras
 
 # 1.1 Criação de Def para pedir_número sem crashar quando colocar letra ou um número inválido.
