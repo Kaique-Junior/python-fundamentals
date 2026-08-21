@@ -41,7 +41,7 @@ while True:
 
         if not item_selecionado: # Condição para caso o usuário digite um código que não exista na lista.
             print("\nCÓDIGO INVÁLIDO. Esse código não está no cardápio.")
-            continuechanginginto
+            continue
 
         # Input de Quantidade + Verificação se o que foi digitado está correto.
         quantidade = int(input("Digite a quantidade desejada: "))
