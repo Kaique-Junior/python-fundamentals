@@ -38,7 +38,7 @@ while True:
             if item["codigo"] == codigo:
                 item_selecionado = item # Recebe o dicionário do produto selecionado pelo código.
                 break
-
+            
         if not item_selecionado: # Condição para caso o usuário digite um código que não exista na lista.
             print("\nCÓDIGO INVÁLIDO. Esse código não está no cardápio.")
             continue
