@@ -1,3 +1,5 @@
+# Desafio 2
+
 while True:
     try:
         num1 = int(input("\nInforme o primeiro número: "))
