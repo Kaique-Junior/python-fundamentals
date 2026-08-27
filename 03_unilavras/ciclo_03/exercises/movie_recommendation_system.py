@@ -44,4 +44,20 @@ while True:
             print(f"\nRecomendações de {categorias[opcao].title()}: {', '.join(recomendacoes[opcao])}")
         case _:
             print("Opção inválida.")
-    break
+
+    # Loop como Tratamento de Erro.
+    while True:
+        try:
+            confirmar = int(input("\nDeseja continuar rodando o programa... (1) para SIM ou (2) para NÃO: "))  
+            break # Interrompe esse Loop Secundário    
+        except ValueError:
+            print("ERRO! Digite apenas (1) para SIM ou (2) para NÃO\n")
+            continue
+
+    match confirmar:
+        case 1:
+            print("Reiniciando Programa....\n")
+            continue
+        case 2:
+            print("Programa Encerrado!")
+            break
