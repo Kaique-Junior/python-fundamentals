@@ -1,14 +1,13 @@
 # Desafio 1
 
+# Váriaveis
 salario_minimo = 1192.40
 hora_extra = 10
 
 nome = str(input("\nInforme o nome do funcionário: "))
-
 horas_extra_trabalhadas = float(input(f"Informe quantas horas extras {nome.upper()} trabalhou:"))
 
 salario_extra = hora_extra * horas_extra_trabalhadas
-
 salario_bruto = 3 * salario_minimo + salario_extra
 
 # Desconto do INSS
