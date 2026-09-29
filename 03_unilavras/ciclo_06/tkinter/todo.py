@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
 
+# Adicionar tarefas
 def add_task():
     task_name = task_name_entry.get()
     task_priority = priority_combobox.get()
@@ -16,6 +17,7 @@ def add_task():
     else:
         messagebox.showwarning('Aviso', 'Digite o nome e selecione a prioridade da tarefa!')
 
+# Atualizar tarefas
 def update_task():
     selected_item = task_list.selection()
 
@@ -33,6 +35,7 @@ def update_task():
     else:
         messagebox.showwarning('Aviso', 'Selecione uma tarefa para atualizar!')
 
+# Excluir tarefas
 def delete_task():
     selected_item = task_list.selection()
 
@@ -44,6 +47,7 @@ def delete_task():
     else:
         messagebox.showwarning('Aviso', 'Selecione uma tarefa para excluir!')
 
+# Concluir tarefas
 def toggle_completed():
     selected_item = task_list.selection()
 
@@ -57,16 +61,18 @@ def toggle_completed():
     else:
         messagebox.showwarning('Aviso', 'Selecione uma tarefa para concluir!')
 
-# Configurar a janela principal e estilos
+# Passo 6: Janela principal e estilos
 window = tk.Tk()
 window.title('Lista de Tarefas com Prioridade')
 
 style = ttk.Style()
+style.theme_use('default')  # Estava com problemas, por que os botões estavam ficando totalmente brancos e pesquisando um pouco, achei essa função que é essencial para o windows fazer funcionar as cores.
+
 style.configure('TButton', padding=10, relief='raised', font=('Helvetica', 12))
 style.configure('TEntry', padding=10, font=('Helvetica', 12))
 style.configure('TLabel', font=('Helvetica', 12))
 
-# Definir cores personalizadas e estilos de botões
+# Cores personalizadas e estilos de botões
 bg_color = '#f0f0f0'
 
 button_bg_colors = {
@@ -78,16 +84,17 @@ button_bg_colors = {
 
 button_fg_color = 'white'
 
-for action, bg_color in button_bg_colors.items():
-    style.configure(f'{action}.TButton', background=bg_color, foreground=button_fg_color)
+for action, color in button_bg_colors.items():
+    style.configure(f'{action}.TButton', background=color, foreground=button_fg_color)
 
 # Rótulos e entradas de texto
-task_name_label = ttk.Label(window, text='Nome da Tarefa:', background=bg_color)
+
+task_name_label = ttk.Label(window, text='Nome da Tarefa:', background='#f0f0f0')
 task_name_label.grid(row=0, column=0, padx=10, pady=5)
 task_name_entry = ttk.Entry(window, width=30, font=('Helvetica', 12))
 task_name_entry.grid(row=0, column=1, padx=10, pady=5)
 
-priority_label = ttk.Label(window, text='Prioridade:', background=bg_color)
+priority_label = ttk.Label(window, text='Prioridade:', background='#f0f0f0')
 priority_label.grid(row=1, column=0, padx=10, pady=5)
 priorities = ['Alta', 'Média', 'Baixa']
 priority_combobox = ttk.Combobox(window, values=priorities, state='readonly', width=27, font=('Helvetica', 12))
@@ -121,4 +128,5 @@ task_list.grid(row=3, column=0, columnspan=4, padx=10, pady=5)
 task_list.column('Status', width=100)
 task_list.heading('Status', text='Status')
 
+# Iniciar a interface
 window.mainloop()
