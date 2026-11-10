@@ -1,7 +1,7 @@
 # Kaique Junior da Silva Oliveira
 
 def calcular_area_triangulo(base, altura):
-    return (base * altura) // 2
+    return (base * altura) / 2
 
 def calcular_volume_cubo(aresta):
     return aresta ** 3

@@ -11,7 +11,7 @@ def calcular_fatorial(numero):
     return total
         
 
-numero = int(input('Digite o número que quer calcular o fatorial (Escolha números maiores que 1): '))
+numero = int(input('Digite o número que quer calcular o fatorial: '))
 
 total = calcular_fatorial(numero)
 
